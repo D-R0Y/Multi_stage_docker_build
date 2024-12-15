@@ -1,7 +1,20 @@
 # Project Name
+ **Multi-Stage Dockerfile Breakdown:**
 
-A brief description of your project. Explain what it does and why it is useful.
+    <b>Stage 1 (Build Stage):<b><br>
 
+      Uses Node.js Alpine image to minimize base image size<br>
+      Copies package files and installs dependencies<br>
+      Copies application code<br>
+      Builds the React application<br>
+
+
+    <b>Stage 2 (Production Stage):<b><br>
+
+      Uses lightweight Nginx Alpine image
+      Copies built assets from the build stage
+      Configures Nginx to serve the static files
+      Exposes port 80
 
 ### 1. Clone the Repository
 
